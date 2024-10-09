@@ -4,7 +4,7 @@
 ## 1 - Capteur BMP280
 ### Identification datasheet
 1 - 
-Les 7 bits d'adresses du composant sont **"111011x"**. Les 6 premiers bits sont fixé et le dernier est changé par le SDO en fonction de si le SDO est connecté à la massse, alors l'adresse est **"1110110(0x76)"** ou si il est connecté à V_DDIO alors l'adresse est **"1110111(0x77).
+Les 7 bits d'adresses du composant sont **"111011x"**. Les 6 premiers bits sont fixé et le dernier est changé par le SDO en fonction de si le SDO est connecté à la massse, alors l'adresse est **"1110110(0x76)"** ou si il est connecté à V_DDIO alors l'adresse est **"1110111(0x77)"**.
 Les registres sont : 
 - 0x88 à OxA1 pour la calibration.
 - 0xD0 pour l'identifier le composant. Ici, le nunéro d'identitfication est **Ox58**.
