@@ -8,8 +8,8 @@ Les 7 bits d'adresses du composant sont **"111011x"**. Les 6 premiers bits sont 
 Les registres sont : 
 - 0x88 à OxA1 pour la calibration.
 - 0xD0 pour l'identifier le composant. Ici, le nunéro d'identitfication est **Ox58**.
-- OxF3 pour le status.
-- OxF4 pour le controle des option d'acquisition des données.
-- OxF5 pour placer le composant en mode **"Normal"**, en mode **"Forced"** et on mode **"Sleep"**.
-- OxF7, OxF8 et OxF9 pour la pression. Il faut trois registres pour tout stocker sur 20 bits en tout. 
-- OxFA, OxFB et OxFC pour la température. Il faut trois registres pour tout stocker sur 20 bits en tout. 
+- 0xF3 pour le status.
+- 0xF4 pour le controle des option d'acquisition des données.
+- 0xF5 pour placer le composant en mode **"Normal"**, en mode **"Forced"** et on mode **"Sleep"**.
+- 0xF7, OxF8 et OxF9 pour la pression. Il faut trois registres pour tout stocker sur 20 bits en tout. 
+- 0xFA, OxFB et OxFC pour la température. Il faut trois registres pour tout stocker sur 20 bits en tout. 
