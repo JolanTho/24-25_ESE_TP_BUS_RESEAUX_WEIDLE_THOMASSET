@@ -1,0 +1,5 @@
+../Core/Src/bmp280.c:25:5:checkID	16	static
+../Core/Src/bmp280.c:40:5:BMP280_config	24	static
+../Core/Src/bmp280.c:62:6:BMP_etallonage	48	static
+../Core/Src/bmp280.c:79:5:BMP_get_temp	24	static
+../Core/Src/bmp280.c:94:5:BMP_get_pres	24	static
