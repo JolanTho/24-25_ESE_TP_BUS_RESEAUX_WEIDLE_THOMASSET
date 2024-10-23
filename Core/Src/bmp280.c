@@ -22,6 +22,19 @@ uint8_t pres_add = 0xF7;
 
 typedef uint32_t BMP280_S32_t;
 
+short dig_T1 = 0;
+short dig_T2 = 0;
+short dig_T3 = 0;
+short dig_P1 = 0;
+short dig_P2 = 0;
+short dig_P3 = 0;
+short dig_P4 = 0;
+short dig_P5 = 0;
+short dig_P6 = 0;
+short dig_P7 = 0;
+short dig_P8 = 0;
+short dig_P9 = 0;
+
 int checkID(void){
 	retour = HAL_I2C_Master_Transmit(&hi2c1,BMP280_address, &ID_address, 1, HAL_MAX_DELAY);
 	if(retour != HAL_OK){
@@ -59,7 +72,7 @@ int BMP280_config(void){
 	return 1;
 }
 
-void BMP_etallonage(void){
+void BMP_etalonage(void){
 	uint8_t receive_buf[24];
 
 	retour = HAL_I2C_Master_Transmit(&hi2c1,BMP280_address, &calib, 1, HAL_MAX_DELAY);
@@ -74,6 +87,18 @@ void BMP_etallonage(void){
 	for(int i=0;i<24;i++){
 		printf("calib %2d = 0x%x\r\n",i,receive_buf[i]);
 	}
+	dig_T1 = receive_buf[0]|(receive_buf[1]<<8);
+	dig_T2 = receive_buf[2]|(receive_buf[3]<<8);
+	dig_T3 = receive_buf[4]|(receive_buf[5]<<8);
+	dig_P1 = receive_buf[6]|(receive_buf[7]<<8);
+	dig_P2 = receive_buf[8]|(receive_buf[9]<<8);
+	dig_P3 = receive_buf[10]|(receive_buf[11]<<8);
+	dig_P4 = receive_buf[12]|(receive_buf[13]<<8);
+	dig_P5 = receive_buf[14]|(receive_buf[15]<<8);
+	dig_P6 = receive_buf[16]|(receive_buf[17]<<8);
+	dig_P7 = receive_buf[18]|(receive_buf[19]<<8);
+	dig_P8 = receive_buf[20]|(receive_buf[21]<<8);
+	dig_P9 = receive_buf[22]|(receive_buf[23]<<8);
 }
 
 int BMP_get_temp(void){
@@ -81,11 +106,11 @@ int BMP_get_temp(void){
 	uint8_t receive_buf[3];
 	retour = HAL_I2C_Master_Transmit(&hi2c1,BMP280_address, &temp_add, 1, HAL_MAX_DELAY);
 	if(retour != HAL_OK){
-		printf("Erreur de l'I2C (Etalo-T)\r\n");
+		printf("Erreur de l'I2C (GetT-T)\r\n");
 	}
 	retour = HAL_I2C_Master_Receive(&hi2c1, BMP280_address, receive_buf, 3, HAL_MAX_DELAY);
 	if(retour != HAL_OK){
-		printf("Erreur de l'I2C (Etalo-R)\r\n");
+		printf("Erreur de l'I2C (GetT-R)\r\n");
 	}
 	int nc_temp=receive_buf[0]<<12|receive_buf[1]<<4|receive_buf[2]>>4;
 	return nc_temp;
@@ -96,31 +121,53 @@ int BMP_get_pres(void){
 	uint8_t receive_buf[3];
 	retour = HAL_I2C_Master_Transmit(&hi2c1,BMP280_address, &pres_add, 1, HAL_MAX_DELAY);
 	if(retour != HAL_OK){
-		printf("Erreur de l'I2C\r\n");
+		printf("Erreur de l'I2C (GetP_T)\r\n");
 	}
 	retour = HAL_I2C_Master_Receive(&hi2c1, BMP280_address, receive_buf, 3, HAL_MAX_DELAY);
 	if(retour != HAL_OK){
-		printf("Erreur de l'I2C\r\n");
+		printf("Erreur de l'I2C (GetP_R)\r\n");
 	}
 	int nc_pres=receive_buf[0]<<12|receive_buf[1]<<4|receive_buf[2]>>4;
 	return nc_pres;
 }
 
-BMP280_U32_t bmp280_compensate_P_int64(BMP280_S32_t adc_P)
+// Returns temperature in DegC, double precision. Output value of “51.23” equals 51.23 DegC.
+// t_fine carries fine temperature as global value
+BMP280_S32_t t_fine;
+double bmp280_compensate_T_double(BMP280_S32_t adc_T)
 {
-	BMP280_S64_t var1, var2, p;
-	var1 = ((BMP280_S64_t)t_fine) - 128000;
-	var2 = var1 * var1 * (BMP280_S64_t)dig_P6;
-	var2 = var2 + ((var1*(BMP280_S64_t)dig_P5)<<17);
-	var2 = var2 + (((BMP280_S64_t)dig_P4)<<35);
-	var1 = ((var1 * var1 * (BMP280_S64_t)dig_P3)>>8) + ((var1 * (BMP280_S64_t)dig_P2)<<12);
-	var1 = (((((BMP280_S64_t)1)<<47)+var1))*((BMP280_S64_t)dig_P1)>>33;
-	if (var1 == 0){
-		return 0; // On fait une levée d'erreur afin de ne pas avoir de division par 0.
+	double var1, var2, T;
+	int32_t t_fine;
+
+	var1 = (((double)adc_T) / 16384.0 - ((double)dig_T1) / 1024.0) * ((double)dig_T2);
+	var2 = ((((double)adc_T) / 131072.0 - ((double)dig_T1) / 8192.0) * (((double)adc_T) / 131072.0 - ((double)dig_T1) / 8192.0)) * ((double)dig_T3);
+	t_fine = (int32_t)(var1 + var2);
+	T = (var1 + var2) / 5120.0;
+	return T;
+}
+// Returns pressure in Pa as double. Output value of “96386.2” equals 96386.2 Pa = 963.862 hPa
+double bmp280_compensate_P_double(BMP280_S32_t adc_P)
+{
+
+	double var1, var2, p;
+
+	var1 = ((double)t_fine / 2.0) - 64000.0;
+	var2 = var1 * var1 * ((double)dig_P6) / 32768.0;
+	var2 = var2 + var1 * ((double)dig_P5) * 2.0;
+	var2 = (var2 / 4.0) + (((double)dig_P4) * 65536.0);
+	var1 = (((double)dig_P3) * var1 * var1 / 524288.0 + ((double)dig_P2) * var1) / 524288.0;
+	var1 = (1.0 + var1 / 32768.0) * ((double)dig_P1);
+
+	if (var1 == 0.0) {
+	    return 0; // éviter la division par zéro
 	}
-	p = 1048576-adc_P;
-	p = (((p<<31)-var2)*3125)/var1;
-	var1 = (((BMP280_S64_t)dig_P9) * (p>>13) * (p>>13)) >> 25;
-	var2 = (((BMP280_S64_t)dig_P8) * p) >> 19; p = ((p + var1 + var2) >> 8) + (((BMP280_S64_t)dig_P7)<<4);
-	return (BMP280_U32_t)p;
+
+	p = 1048576.0 - (double)adc_P;
+	p = (p - (var2 / 4096.0)) * 6250.0 / var1;
+	var1 = ((double)dig_P9) * p * p / 2147483648.0;
+	var2 = p * ((double)dig_P8) / 32768.0;
+	p = p + (var1 + var2 + ((double)dig_P7)) / 16.0;
+
+	return p;
+
 }

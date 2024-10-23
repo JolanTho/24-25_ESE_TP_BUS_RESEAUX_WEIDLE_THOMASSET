@@ -49,6 +49,7 @@
 /* USER CODE BEGIN PV */
 uint32_t nc_temp=0;
 uint32_t nc_pres=0;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -61,6 +62,7 @@ void SystemClock_Config(void);
 /* USER CODE BEGIN 0 */
 int __io_putchar(int chr){
 	HAL_UART_Transmit(&huart2, (uint8_t*)&chr, 1, HAL_MAX_DELAY);
+//	HAL_UART_Transmit(&huart1, (uint8_t*)&chr, 1, HAL_MAX_DELAY);
 	return chr;
 }
 /* USER CODE END 0 */
@@ -96,6 +98,7 @@ int main(void)
   MX_GPIO_Init();
   MX_USART2_UART_Init();
   MX_I2C1_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -121,18 +124,23 @@ int main(void)
 		printf("Erreur lors de la configuration du composant\r\n");
 	}
 
-	BMP_etallonage();
+	BMP_etalonage();
 
   while (1)
   {
     /* USER CODE END WHILE */
-	nc_temp = BMP_get_temp();
-	nc_pres = BMP_get_pres();
-	printf("Temperature non compensee = %lu\r\n",nc_temp/40000);
-	printf("Pression non compensee = %lu\r\n",nc_pres/400);
 
-	HAL_Delay(1000);
+	  double temp, pres;
 
+	  temp = bmp280_compensate_T_double((uint32_t)BMP_get_temp());
+	  pres = bmp280_compensate_P_double((uint32_t)BMP_get_pres());
+
+	  int temp_int = (int)(temp);
+	  int pres_int = (int)(pres);
+
+	  printf("Temperature: %d °C, Pressure: %d hPa\r\n", temp_int, pres_int);
+
+	  HAL_Delay(1000);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
