@@ -49,6 +49,7 @@
 /* USER CODE BEGIN PV */
 uint32_t nc_temp=0;
 uint32_t nc_pres=0;
+HAL_StatusTypeDef result;
 
 /* USER CODE END PV */
 
@@ -138,9 +139,19 @@ int main(void)
 	  int temp_int = (int)(temp);
 	  int pres_int = (int)(pres);
 
-	  printf("Temperature: %d °C, Pressure: %d hPa\r\n", temp_int, pres_int);
+	  printf("Temperature: %d C, Pressure: %d hPa\r\n", temp_int, pres_int);
 
-	  HAL_Delay(1000);
+	  result = HAL_UART_Transmit(&huart1, (uint8_t*)&temp_int, sizeof(temp_int), HAL_MAX_DELAY);
+
+	  if (result == HAL_OK) {
+	      // Transfert réussi
+	      printf("Transmission reussie : %d\r\n", temp_int);
+	  } else {
+	      // Gestion de l'erreur
+	      printf("Erreur de transmission\r\n");
+	  }
+
+	  HAL_Delay(5000);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
