@@ -21,7 +21,6 @@
 #include "i2c.h"
 #include "usart.h"
 #include "gpio.h"
-#include "bmp280.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -129,7 +128,6 @@ int main(void)
 
   while (1)
   {
-    /* USER CODE END WHILE */
 
 	  double temp, pres;
 
@@ -152,6 +150,8 @@ int main(void)
 	  }
 
 	  HAL_Delay(5000);
+    /* USER CODE END WHILE */
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
