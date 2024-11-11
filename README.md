@@ -19,3 +19,5 @@ L'objectif de ce TP est de controler un moteur pas à pas à l'aide de la STM32 
 Pour cela on utilise un "Tranceiver CAN" que l'on fixe directement sur la STM.
 
 Pour pouvoir communiquer via le Bus CAN il faut d'abord le paramétrer dans le fichier IOC de la stm 32 pour avoir une vitesse de CAN de 500kbit/s.
+
+<p align="center"><img src="Hardware/img/Bloc symtem optimized.png" width="600" /> </p> 
