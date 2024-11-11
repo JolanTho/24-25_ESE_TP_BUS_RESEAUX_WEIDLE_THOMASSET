@@ -12,4 +12,7 @@ Les registres sont :
 - 0xF4 pour le controle des option d'acquisition des données.
 - 0xF5 pour placer le composant en mode **"Normal"**, en mode **"Forced"** et on mode **"Sleep"**.
 - 0xF7, OxF8 et OxF9 pour la pression. Il faut trois registres pour tout stocker sur 20 bits en tout. 
-- 0xFA, OxFB et OxFC pour la température. Il faut trois registres pour tout stocker sur 20 bits en tout. 
+- 0xFA, OxFB et OxFC pour la température. Il faut trois registres pour tout stocker sur 20 bits en tout.
+
+# TP4 - Bus CAN 
+L'objectif de ce TP est de controler un moteur pas à pas à l'aide de la STM32 grâce à un Bus CNA.
