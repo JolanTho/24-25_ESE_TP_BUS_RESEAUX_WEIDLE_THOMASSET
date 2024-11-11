@@ -15,4 +15,7 @@ Les registres sont :
 - 0xFA, OxFB et OxFC pour la température. Il faut trois registres pour tout stocker sur 20 bits en tout.
 
 # TP4 - Bus CAN 
-L'objectif de ce TP est de controler un moteur pas à pas à l'aide de la STM32 grâce à un Bus CNA.
+L'objectif de ce TP est de controler un moteur pas à pas à l'aide de la STM32 grâce à un Bus CAN.
+Pour cela on utilise un "Tranceiver CAN" que l'on fixe directement sur la STM.
+
+Pour pouvoir communiquer via le Bus CAN il faut d'abord le paramétrer dans le fichier IOC de la stm 32 pour avoir une vitesse de CAN de 500kbit/s.
