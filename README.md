@@ -20,4 +20,4 @@ Pour cela on utilise un "Tranceiver CAN" que l'on fixe directement sur la STM.
 
 Pour pouvoir communiquer via le Bus CAN il faut d'abord le paramétrer dans le fichier IOC de la stm 32 pour avoir une vitesse de CAN de 500kbit/s.
 
-<p align="center"><img src="Hardware/img/Bloc symtem optimized.png" width="600" /> </p> 
+<p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/Capture%20d’écran%202024-11-11%20à%2022.11.50.png" width="600" /> </p> 
