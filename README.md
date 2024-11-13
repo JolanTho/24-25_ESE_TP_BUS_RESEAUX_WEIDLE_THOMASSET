@@ -147,7 +147,7 @@ Pour pouvoir faire bouger proprotionnelement le moteur par rapport à la tempér
 
 <p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/GETTEMPbasic.PNG" width="600" /> </p> 
 <p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/PostTemp.PNG" width="600" /> </p> 
-<p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/config_IOC.png" width="600" /> </p> 
+<p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/DeletTemp.PNG" width="600" /> </p> 
 <p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/config_IOC.png" width="600" /> </p> 
 
 ## Auteurs : 
