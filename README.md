@@ -50,7 +50,6 @@ Les registres sont :
 
 >[!Note]
 >Pour tester la connexion en UART, on connecte Rx et Tx et on utilise `minicom` pour s'auto-envoyer des messages. Une fois que cela fonctionne, on peut connecter Rx sur Tx de la STM32 et Tx sur Rx de la STM32, en utilisant l'UART1 et les pins PA9 et PA10. Il ne faut pas oublier la masse.  
-
 >On peut maintenant créer des fonctions pour gérer les requêtes du Raspberry dans le Callback de l'UART. Les requêtes font 5 caractères de long donc le callback est appelé tous les 5 caractères reçus, puis les chaînes de caractères sont comparées aux différentes requêtes attendues pour choisir la bonne fonction à exécuter.  
 
 ### 2.3. Requêtes depuis Python
