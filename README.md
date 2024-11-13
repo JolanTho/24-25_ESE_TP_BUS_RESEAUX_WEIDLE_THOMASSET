@@ -120,7 +120,7 @@ On veut maintenant pouvoir envoyer les requêtes grâce à un programme et non e
 >* DELETE  
 
 ><p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/RequestTotal.png" width="600" /> </p> 
-><p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/RequestPost.png" width="600" /> </p> 
+><p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/RequestPatch.png" width="600" /> </p> 
 ><p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/RequestPost.png" width="600" /> </p> 
 ><p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/RequestPost.png" width="600" /> </p> 
 
