@@ -111,7 +111,7 @@ On veut maintenant pouvoir envoyer les requêtes grâce à un programme et non e
 >[!Note]
 >* Pour la suite du TP nous utilisons le plugin RESTED.  
 >* On commence avec un simple test avec la méthode POST ce qui nous donne :  
->* ### POST
+> POST
 ><p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/RequestPost.png" width="600" /> </p> 
 >* Auquel on ajoute l'API Cruid pour avoir toutes les fonctions suivantes   
 >* GET  
