@@ -122,6 +122,9 @@ Après avoir correct configurer le microcontroler, nous allons utiliser les fonc
 - HAL_CAN_Start (CAN_HandleTypeDef * hcan)
 - HAL_CAN_AddTxMessage (CAN_HandleTypeDef * hcan, CAN_TxHeaderTypeDef * pHeader, uint8_t aData[], uint32_t * pTxMailbox)
 
+Pour commander le moteur, on utilise le mode automatic. Cela nous permet de juste mettre une valeur d'angle et le signe de l'angle dans un tableau à deux dimension. 
+
+Pour pouvoir faire bouger proprotionnelement le moteur par rapport à la température, on défini une température de consigne ici 25°C puis on compare cette consigne à la valeur mesuré par le capteur. Nous avons ensuite fait un correcteur PI pour faire tourner le moteur proportionnelement à l'écart de température entre le consigne et la température mesuré. 
   
 
 
