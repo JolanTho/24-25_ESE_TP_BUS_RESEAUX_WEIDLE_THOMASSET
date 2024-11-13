@@ -63,32 +63,33 @@ On veut maintenant pouvoir envoyer les requêtes grâce à un programme et non e
 
 >[!Note]
 >* Comme montré dans les captures ci-dessous nous avons mis en place un serveur qui est accessible via curl.  
-<p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/installPy1.png" width="600" /> </p> 
-<p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/installPy2.png" width="600" /> </p> 
+><p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/installPy1.png" width="600" /> </p> 
+><p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/installPy2.png" width="600" /> </p> 
 
 >[!Note]
 >* Puis nous avons fait en sorte que cela soit disponible sur un site web au port 5000.
-<p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/installPy3.png" width="600" /> </p> 
+>* ### terminal1
+><p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/installPy3.png" width="600" /> </p> 
+
+ ### web1
 <p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/installPy4.png" width="600" /> </p> 
 
-terminal1
-web1
+
+
 
 ### 3.2 Première page REST
 
 >[!Note]
 >* Il est important de noter que le décodeur @app.route permet de spécifier la page que l'on souhaite accéder. Le fragment <int:index> est de pouvoir récupérer une variable passé dans l'URL (Dans notre cas l'int)  
 >* En premier lieu on peut voir que la réponse est pas de type json mais bien html/text
-
+ ### html/txt
 <p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/jsonDump2.png" width="600" /> </p> 
+ avec json.dump() il est donc possible de formater la réponse mais aussi de faire en sorte que la réponse soit bien de type Json. Pour le reste cela sera la deuxième solution et JsonNotify qui sera utilisé.
 
-html/txt
-
->* avec json.dump() il est donc possible de formater la réponse mais aussi de faire en sorte que la réponse soit bien de type Json. Pour le reste cela sera la deuxième solution et JsonNotify qui sera utilisé.
-### JsonDump
+ ### JsonDump
 <p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/jsonNotify.png" width="600" /> </p> 
 
-### JsonNotify
+ ### JsonNotify
 <p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/jsonNotify2.png" width="600" /> </p> 
 
 
@@ -96,19 +97,13 @@ html/txt
 
 >[!Note]
 >* Dans l'état actuel des choses les erreurs 404 ne sont pas prises en compte. En effet demander une page qui n'existe pas nous amène à cela:
-
-### 404Console
+ ### 404Console
 <p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/page404console.png" width="600" /> </p> 
-
-### 404WebFail
+ ### 404WebFail
 <p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/page404NotWorking.png" width="600" /> </p> 
-
-
-
-
->* Par conséquent nous avons ajouté le code permettant de gérer les pages 404.
->* ### 404webSucess
-><p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/page404Working.png" width="600" /> </p> 
+ Par conséquent nous avons ajouté le code permettant de gérer les pages 404.
+ ### 404webSucess
+<p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/page404Working.png" width="600" /> </p> 
 
 
 ### 3.3 Première page HTTP 
@@ -117,6 +112,7 @@ html/txt
 >* Pour la suite du TP nous utilisons le plugin RESTED.  
 >* On commence avec un simple test avec la méthode POST ce qui nous donne :  
 
+<p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/page404Working.png" width="600" /> </p> 
 [POST](/screen_TP/TP3/RequestPost.png)
 
 >* Auquel on ajoute l'API Cruid pour avoir toutes les fonctions suivantes   
