@@ -69,10 +69,10 @@ On veut maintenant pouvoir envoyer les requêtes grâce à un programme et non e
 >[!Note]
 >* Puis nous avons fait en sorte que cela soit disponible sur un site web au port 5000.
 <p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/installPy3.png" width="600" /> </p> 
-<p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/installPy2.png" width="600" /> </p> 
+<p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/installPy4.png" width="600" /> </p> 
 
-[terminal1](/screen_TP/TP3/installPy3.png)
-[web1](/screen_TP/TP3/installPy4.png)
+terminal1
+web1
 
 ### 3.2 Première page REST
 
