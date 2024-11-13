@@ -84,8 +84,11 @@ web1
 
 html/txt
 
->* avec json.dump() il est donc possible de formater la réponse mais aussi de faire en sorte que la réponse soit bien de type Json. Pour le reste cela sera la deuxième solution et JsonNotify qui sera utilisé.   
-[JsonDump](/screen_TP/TP3/jsonNotify.png)
+>* avec json.dump() il est donc possible de formater la réponse mais aussi de faire en sorte que la réponse soit bien de type Json. Pour le reste cela sera la deuxième solution et JsonNotify qui sera utilisé.
+<p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/jsonNotify.png" width="600" /> </p> 
+<p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/jsonNotify.png" width="600" /> </p> 
+
+JsonDump
 [JsonNotify](/screen_TP/TP3/jsonNotify2.png)
 
 >[!Note]
