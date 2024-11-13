@@ -20,7 +20,7 @@ Ce projet est organisé en 5 TP :
 - **TP2** : Interface stm32 - Raspberry.
 - **TP3** : Interface REST.
 - **TP4** : Bus CNA.
-- **TP5** : Intégration I2C - Serial - REST - CAN
+- **TP5** : Intégration I2C - Serial - REST - CAN.
 
 ---
 
@@ -143,7 +143,12 @@ Pour commander le moteur, on utilise le mode automatic. Cela nous permet de just
 
 Pour pouvoir faire bouger proprotionnelement le moteur par rapport à la température, on défini une température de consigne ici 25°C puis on compare cette consigne à la valeur mesuré par le capteur. Nous avons ensuite fait un correcteur PI pour faire tourner le moteur proportionnelement à l'écart de température entre le consigne et la température mesuré. 
   
+## TP5 - Intégration I2C - Serial - REST - CAN
 
+<p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/config_IOC.png" width="600" /> </p> 
+<p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/config_IOC.png" width="600" /> </p> 
+<p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/config_IOC.png" width="600" /> </p> 
+<p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/config_IOC.png" width="600" /> </p> 
 
 ## Auteurs : 
 Jolan Thomasset (jolan.thomasset@ensea.fr)
