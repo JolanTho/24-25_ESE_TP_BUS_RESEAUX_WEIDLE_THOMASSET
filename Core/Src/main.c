@@ -51,7 +51,16 @@
 uint32_t nc_temp=0;
 uint32_t nc_pres=0;
 HAL_StatusTypeDef result;
-int cons_temp=25;
+int cons_temp=20;
+
+double Kp = 10.0;
+double Ki = 0.1;
+double integral = 0.0;
+double output = 0.0;
+double max_integral = 50.0;
+
+// Facteur de lissage (plus il est proche de 1, plus la sortie est lissée)
+double smoothing_factor = 0.9;
 
 /* USER CODE END PV */
 
@@ -67,6 +76,19 @@ int __io_putchar(int chr){
 	HAL_UART_Transmit(&huart2, (uint8_t*)&chr, 1, HAL_MAX_DELAY);
 //	HAL_UART_Transmit(&huart1, (uint8_t*)&chr, 1, HAL_MAX_DELAY);
 	return chr;
+}
+
+// Fonction pour mettre à jour la sortie PI avec lissage
+void updatePI(double varia) { // varia représente l'erreur
+    // Limite anti-windup pour l'intégrale
+    integral += varia;
+    if (integral > max_integral) integral = max_integral;
+    if (integral < -max_integral) integral = -max_integral;
+
+    double raw_output = Kp * varia + Ki * integral;
+
+    output = smoothing_factor * output + (1 - smoothing_factor) * raw_output;
+
 }
 /* USER CODE END 0 */
 
@@ -150,6 +172,7 @@ int main(void)
 	  pres = bmp280_compensate_P_double((uint32_t)BMP_get_pres());
 
 	  int temp_int = (int)(temp);
+	  temp_int -= 5;
 	  int pres_int = (int)(pres);
 
 	  printf("Temperature: %d C, Pressure: %d hPa\r\n", temp_int, pres_int);
@@ -162,9 +185,17 @@ int main(void)
 		  aData[1]=0x01;
 	  }
 
-	  varia=varia*10;
-	  aData[0]=varia;
-	  printf("varia = %d\r\n",varia);
+	  updatePI((double)varia);
+
+	 // varia=varia*10;
+
+	  printf("varia = %d\r\n",(int)output);
+
+//	  if((int)output < 0){
+//		  output += 180;
+//	  }
+
+	  aData[0]=(int)output;
 
   	  HAL_CAN_AddTxMessage(&hcan1,&pHeader,aData,&Mailbox);
 
@@ -181,7 +212,7 @@ int main(void)
 	  }
 
 
-	  HAL_Delay(1000);
+	  HAL_Delay(100);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
