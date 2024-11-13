@@ -113,6 +113,7 @@ On veut maintenant pouvoir envoyer les requêtes grâce à un programme et non e
 >* On commence avec un simple test avec la méthode POST ce qui nous donne :  
 
 <p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/page404Working.png" width="600" /> </p> 
+
 [POST](/screen_TP/TP3/RequestPost.png)
 
 >* Auquel on ajoute l'API Cruid pour avoir toutes les fonctions suivantes   
