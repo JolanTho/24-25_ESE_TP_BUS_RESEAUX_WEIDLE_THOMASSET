@@ -18,12 +18,14 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "can.h"
 #include "i2c.h"
 #include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "bmp280.h"
 #include <stdio.h>
 #include <stdlib.h>
 /* USER CODE END Includes */
@@ -49,6 +51,7 @@
 uint32_t nc_temp=0;
 uint32_t nc_pres=0;
 HAL_StatusTypeDef result;
+int cons_temp=25;
 
 /* USER CODE END PV */
 
@@ -75,7 +78,17 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
+	uint8_t aData[2]={0x54,0x00};
+	CAN_TxHeaderTypeDef pHeader;
+	uint32_t Mailbox;
 
+
+
+	pHeader.StdId=0x61;
+	pHeader.IDE=CAN_ID_STD;
+	pHeader.RTR = CAN_RTR_DATA;
+	pHeader.DLC=2;
+	pHeader.TransmitGlobalTime=DISABLE;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -99,8 +112,9 @@ int main(void)
   MX_USART2_UART_Init();
   MX_I2C1_Init();
   MX_USART1_UART_Init();
+  MX_CAN1_Init();
   /* USER CODE BEGIN 2 */
-
+  HAL_CAN_Start(&hcan1);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -130,6 +144,7 @@ int main(void)
   {
 
 	  double temp, pres;
+	  int varia=0;
 
 	  temp = bmp280_compensate_T_double((uint32_t)BMP_get_temp());
 	  pres = bmp280_compensate_P_double((uint32_t)BMP_get_pres());
@@ -139,7 +154,23 @@ int main(void)
 
 	  printf("Temperature: %d C, Pressure: %d hPa\r\n", temp_int, pres_int);
 
+
+	  varia=temp_int-cons_temp;
+	  if (varia>=0){
+		  aData[1]=0x00;
+	  }else if (varia<0){
+		  aData[1]=0x01;
+	  }
+
+	  varia=varia*10;
+	  aData[0]=varia;
+	  printf("varia = %d\r\n",varia);
+
+  	  HAL_CAN_AddTxMessage(&hcan1,&pHeader,aData,&Mailbox);
+
+
 	  result = HAL_UART_Transmit(&huart1, (uint8_t*)&temp_int, sizeof(temp_int), HAL_MAX_DELAY);
+
 
 	  if (result == HAL_OK) {
 	      // Transfert réussi
@@ -149,7 +180,8 @@ int main(void)
 	      printf("Erreur de transmission\r\n");
 	  }
 
-	  HAL_Delay(5000);
+
+	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
