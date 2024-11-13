@@ -162,7 +162,7 @@ Donc coté raspy le serveur est bon et repond bien aux questions.
 - [x] Faire fonctionner le moteur en CAN :tada:
 - [x] Faire tourner le moteur proportionnellement aux différences de température avec un PI :tada:
 - [x] Préparer le tableau de pression et Temperature (Get, Post, Delete) pour intéragir avec tout :tada:
-- [x] Avoir un serveur complètement opérationnel coté raspy:tada:
+- [x] Avoir un serveur complètement opérationnel coté raspy :tada:
 - [ ] Ajouter le traitement en interruption ou DMA des demande UART entre Raspy et STM
 - [ ] Finir le TP avec l'intégration complète et pas partielle (COTE STM fully intégré / COTE RASPY fully integre)
 
