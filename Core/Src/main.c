@@ -212,7 +212,7 @@ int main(void)
 	  }
 
 
-	  HAL_Delay(100);
+	  HAL_Delay(10000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
