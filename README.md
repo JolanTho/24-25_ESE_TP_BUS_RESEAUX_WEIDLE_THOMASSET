@@ -122,6 +122,8 @@ Après avoir correct configurer le microcontroler, nous allons utiliser les fonc
 - HAL_CAN_Start (CAN_HandleTypeDef * hcan)
 - HAL_CAN_AddTxMessage (CAN_HandleTypeDef * hcan, CAN_TxHeaderTypeDef * pHeader, uint8_t aData[], uint32_t * pTxMailbox)
 
+  
+
 
 ## Auteurs : 
 Jolan Thomasset (jolan.thomasset@ensea.fr)
