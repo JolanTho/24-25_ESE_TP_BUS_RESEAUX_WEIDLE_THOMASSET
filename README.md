@@ -16,10 +16,11 @@
 Bienvenue sur le dépôt GitHub de **TP Bus&Reseau**. Ce projet a pour but de développer différentes connexions réseau entre STM et des modules/ serveur sur raspy.
 
 Ce projet est organisé en 5 TP :
-- **TP1** : BLABLA.
-- **TP2** : BLABLA.
-- **TP3** : BLABLA.
-- **TP4** : BLABLA.
+- **TP1** : Bus I2C.
+- **TP2** : Interface stm32 - Raspberry.
+- **TP3** : Interface REST.
+- **TP4** : Bus CNA.
+- **TP5** : Intégration I2C - Serial - REST - CAN
 
 ---
 
