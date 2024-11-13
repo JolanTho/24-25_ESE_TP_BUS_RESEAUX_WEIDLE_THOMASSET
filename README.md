@@ -80,9 +80,9 @@ web1
 >* Il est important de noter que le décodeur @app.route permet de spécifier la page que l'on souhaite accéder. Le fragment <int:index> est de pouvoir récupérer une variable passé dans l'URL (Dans notre cas l'int)  
 >* En premier lieu on peut voir que la réponse est pas de type json mais bien html/text
 
-<p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/installPy4.png" width="600" /> </p> 
+<p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/jsonDump2.png" width="600" /> </p> 
 
-[html/txt](/screen_TP/TP3/jsonDump2.png)
+html/txt
 
 >* avec json.dump() il est donc possible de formater la réponse mais aussi de faire en sorte que la réponse soit bien de type Json. Pour le reste cela sera la deuxième solution et JsonNotify qui sera utilisé.   
 [JsonDump](/screen_TP/TP3/jsonNotify.png)
