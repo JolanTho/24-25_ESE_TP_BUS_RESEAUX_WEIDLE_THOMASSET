@@ -119,6 +119,11 @@ On veut maintenant pouvoir envoyer les requêtes grâce à un programme et non e
 >* PATCH  
 >* DELETE  
 
+><p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/RequestPost.png" width="600" /> </p> 
+><p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/RequestPost.png" width="600" /> </p> 
+><p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/RequestPost.png" width="600" /> </p> 
+><p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/RequestPost.png" width="600" /> </p> 
+
 [ALL](/screen_TP/TP3/RequestTotal.png)
 [PATCH](/screen_TP/TP3/RequestPatch.png)
 [GET](/screen_TP/TP3/RequestGet.png)
