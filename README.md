@@ -65,6 +65,7 @@ On veut maintenant pouvoir envoyer les requêtes grâce à un programme et non e
 >* Comme montré dans les captures ci-dessous nous avons mis en place un serveur qui est accessible via curl.  
 <p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/installPy1.png" width="600" /> </p> 
 <p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/installPy1.png" width="600" /> </p> 
+
 [terminal2](/screen_TP/TP3/installPy2.png)
 
 >[!Note]
