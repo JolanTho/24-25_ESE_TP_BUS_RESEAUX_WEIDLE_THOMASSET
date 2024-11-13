@@ -97,13 +97,17 @@ html/txt
 >[!Note]
 >* Dans l'état actuel des choses les erreurs 404 ne sont pas prises en compte. En effet demander une page qui n'existe pas nous amène à cela:
 
+### 404Console
 <p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/page404console.png" width="600" /> </p> 
-<p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/jsonNotify2.png" width="600" /> </p> 
 
-[404Console](/screen_TP/TP3/page404console.png)
-[404WebFail](/screen_TP/TP3/page404NotWorking.png)
+### 404WebFail
+<p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/page404NotWorking.png" width="600" /> </p> 
 
->* Par conséquent nous avons ajouté le code permettant de gérer les pages 404. 
+
+
+
+>* Par conséquent nous avons ajouté le code permettant de gérer les pages 404.
+><p align="center"><img src="" width="600" /> </p> 
 [404webSucess](/screen_TP/TP3/page404Working.png)
 
 ### 3.3 Première page HTTP 
