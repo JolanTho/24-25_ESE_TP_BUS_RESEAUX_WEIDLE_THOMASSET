@@ -99,6 +99,7 @@ html/txt
 
 <p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/jsonNotify2.png" width="600" /> </p> 
 <p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/jsonNotify2.png" width="600" /> </p> 
+
 [404Console](/screen_TP/TP3/page404console.png)
 [404WebFail](/screen_TP/TP3/page404NotWorking.png)
 
