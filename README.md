@@ -38,6 +38,11 @@ Les registres sont :
 - 0xF7, OxF8 et OxF9 pour la pression. Il faut trois registres pour tout stocker sur 20 bits en tout. 
 - 0xFA, OxFB et OxFC pour la température. Il faut trois registres pour tout stocker sur 20 bits en tout.
 
+  Après implémentation du code sur la stm32 on récupère la température et la pression mesuré par le capteur compensé grâce à la fonction donné dans le TP.
+
+<p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/SALUTSALUT.PNG" width="600" /> </p> 
+
+
 ## TP2 - Interfaçage STM32 - Raspberry
 
 ### 2.1 Initialisation de la raspy
