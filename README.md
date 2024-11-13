@@ -107,8 +107,9 @@ html/txt
 
 
 >* Par conséquent nous avons ajouté le code permettant de gérer les pages 404.
-><p align="center"><img src="" width="600" /> </p> 
-[404webSucess](/screen_TP/TP3/page404Working.png)
+>* ### 404webSucess
+><p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/page404Working.png" width="600" /> </p> 
+
 
 ### 3.3 Première page HTTP 
 
