@@ -98,12 +98,12 @@ On veut maintenant pouvoir envoyer les requêtes grâce à un programme et non e
 >[!Note]
 >* Dans l'état actuel des choses les erreurs 404 ne sont pas prises en compte. En effet demander une page qui n'existe pas nous amène à cela:
  ### 404Console
-<p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/page404console.png" width="600" /> </p> 
- ### 404WebFail
+><p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/page404console.png" width="600" /> </p> 
+> 404WebFail
 <p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/page404NotWorking.png" width="600" /> </p> 
- Par conséquent nous avons ajouté le code permettant de gérer les pages 404.
- ### 404webSucess
-<p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/page404Working.png" width="600" /> </p> 
+> Par conséquent nous avons ajouté le code permettant de gérer les pages 404.
+> 404webSucess
+><p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/page404Working.png" width="600" /> </p> 
 
 
 ### 3.3 Première page HTTP 
@@ -127,10 +127,6 @@ On veut maintenant pouvoir envoyer les requêtes grâce à un programme et non e
 > DELETE
 ><p align="center"><img src="https://github.com/JolanTho/24-25_ESE_TP_BUS_RESEAUX_WEIDLE_THOMASSET/blob/main/screen_TP/TP3/RequestDelete.png" width="600" /> </p> 
 
-
-[PATCH](/screen_TP/TP3/RequestPatch.png)
-[GET](/screen_TP/TP3/RequestGet.png)
-[DELETE](/screen_TP/TP3/RequestDelete.png)
 
 
 ## TP4 - Bus CAN 
